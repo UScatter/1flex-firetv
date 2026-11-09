@@ -16,6 +16,7 @@ You can download the compiled Fire Stick APK directly from the **[Releases](http
 | **1Flex TV Fire Stick APK** | [**Download 1flex-tv-firestick.apk**](https://github.com/UScatter/1flex-firetv/releases/download/v1.0.0/1flex-tv-firestick.apk) |
 | **Standard Name APK** | [**Download 1flex-tv.apk**](https://github.com/UScatter/1flex-firetv/releases/download/v1.0.0/1flex-tv.apk) |
 | **Debug APK** | [**Download app-debug.apk**](https://github.com/UScatter/1flex-firetv/releases/download/v1.0.0/app-debug.apk) |
+| **LimeWire Mirror** | [**Download via LimeWire**](https://limewire.com/d/FMvjf#Ypdy4tn5j2) |
 
 ---
 
