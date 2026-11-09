@@ -1,0 +1,10 @@
+{
+  "appId": "org.oneflex.firetv",
+  "appName": "1Flex TV",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  }
+}

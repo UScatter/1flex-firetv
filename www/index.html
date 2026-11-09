@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>1Flex TV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#141414" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon-192.png" type="image/png" />
+  <link rel="stylesheet" href="css/tv-styles.css" />
+</head>
+<body>
+  <div id="app-container">
+    <!-- Boot / Loading Splash -->
+    <div id="boot-splash">
+      <img src="assets/icon-192.png" alt="1Flex TV" width="100" height="100" style="border-radius: 16px;" />
+      <div class="splash-spinner"></div>
+      <p style="margin-top: 18px; color: #999; font-size: 1rem; font-weight: 500;">Starting 1Flex TV with Ad-Shield...</p>
+    </div>
+
+    <!-- Fire TV Top Quick Bar / HUD (Press Menu key or toggle via cursor) -->
+    <header id="tv-hud">
+      <div class="hud-brand">
+        <img class="hud-logo" src="assets/icon-192.png" alt="Logo" />
+        <div class="hud-title">1FLEX <span>TV</span></div>
+      </div>
+
+      <div class="hud-actions">
+        <button class="hud-btn" onclick="TVApp.goBack()" title="Back">
+          ◀ Back
+        </button>
+        <button class="hud-btn" onclick="TVApp.goHome()" title="Home">
+          🏠 Home
+        </button>
+        <button class="hud-btn" onclick="TVApp.reload()" title="Reload">
+          🔄 Reload
+        </button>
+        <button id="btn-speed" class="hud-btn" onclick="TVApp.cycleSpeed()" title="Cursor Speed">
+          Speed: NORMAL
+        </button>
+        <button class="hud-btn" onclick="TVApp.toggleFullscreen()" title="Fullscreen">
+          ⛶ Fullscreen
+        </button>
+        <div id="shield-count" class="hud-shield-badge">
+          Shield: Active
+        </div>
+      </div>
+
+      <div class="hud-hint">Press Menu on Fire Remote for Controls</div>
+    </header>
+
+    <!-- Main Content Stream Container -->
+    <iframe
+      id="content-frame"
+      src="about:blank"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+      allowfullscreen="true"
+    ></iframe>
+
+    <!-- On-Screen Toast Alerts -->
+    <div id="toast-container"></div>
+  </div>
+
+  <!-- Engines -->
+  <script src="js/ad-shield.js"></script>
+  <script src="js/virtual-cursor.js"></script>
+  <script src="js/tv-app.js"></script>
+</body>
+</html>

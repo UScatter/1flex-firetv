@@ -1,0 +1,23 @@
+{
+  "name": "1Flex TV",
+  "short_name": "1Flex TV",
+  "description": "1Flex Fire TV with Ad-Shield and Remote Virtual Cursor",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#e50914",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["entertainment", "video", "tv"]
+}
