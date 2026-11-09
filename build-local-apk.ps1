@@ -7,16 +7,16 @@ Write-Host "=========================================" -ForegroundColor Cyan
 
 # 1. Check Node.js
 if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
-    Write-Error "Node.js is not found. Please install Node.js (v18+) to continue."
+    Write-Error "Node.js is not found. Please install Node.js (v22+) to continue."
     exit 1
 }
 
 # 2. Check Java JDK
 $hasJava = Get-Command java -ErrorAction SilentlyContinue
 if (-not $hasJava) {
-    Write-Host "[!] Java JDK (v17+) was not found in PATH." -ForegroundColor Yellow
-    Write-Host "To install Java JDK 17 on Windows, run:" -ForegroundColor White
-    Write-Host "  winget install Microsoft.OpenJDK.17" -ForegroundColor Green
+    Write-Host "[!] Java JDK (v21+) was not found in PATH." -ForegroundColor Yellow
+    Write-Host "To install Java JDK 21 on Windows, run:" -ForegroundColor White
+    Write-Host "  winget install Microsoft.OpenJDK.21" -ForegroundColor Green
     Write-Host ""
     Write-Host "Alternatively, push this repository to GitHub and GitHub Actions will automatically" -ForegroundColor White
     Write-Host "compile and output the APK for you in the 'Actions' tab!" -ForegroundColor Green
