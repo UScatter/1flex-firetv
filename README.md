@@ -1,6 +1,32 @@
 # 1Flex Fire TV Application
 
-A dedicated Amazon Fire TV / Android TV hybrid application for [1flex.org](https://www.1flex.org/) with native ad-blocking, popup neutralization, screen wake lock, and a D-pad remote virtual mouse cursor engine.
+[![Release](https://img.shields.io/github/v/release/UScatter/1flex-firetv?color=red&style=for-the-badge)](https://github.com/UScatter/1flex-firetv/releases/latest)
+[![Download APK](https://img.shields.io/badge/Direct%20Download-Fire%20TV%20APK-e50914?style=for-the-badge&logo=android)](https://github.com/UScatter/1flex-firetv/releases/download/v1.0.0/1flex-tv-firestick.apk)
+
+A dedicated Amazon Fire TV / Android TV hybrid application for [1flex.org](https://www.1flex.org/) with native ad-blocking, popup neutralization, screen stay-awake lock, and a D-pad remote virtual mouse cursor engine.
+
+---
+
+## 📥 Direct APK Downloads
+
+You can download the compiled Fire Stick APK directly from the **[Releases](https://github.com/UScatter/1flex-firetv/releases/latest)** section:
+
+| Asset | Link |
+|---|---|
+| **1Flex TV Fire Stick APK** | [**Download 1flex-tv-firestick.apk**](https://github.com/UScatter/1flex-firetv/releases/download/v1.0.0/1flex-tv-firestick.apk) |
+| **Standard Name APK** | [**Download 1flex-tv.apk**](https://github.com/UScatter/1flex-firetv/releases/download/v1.0.0/1flex-tv.apk) |
+| **Debug APK** | [**Download app-debug.apk**](https://github.com/UScatter/1flex-firetv/releases/download/v1.0.0/app-debug.apk) |
+
+---
+
+## 📺 How to Install on Fire Stick (via Downloader App)
+
+1. On your Fire TV, open the **Downloader** app.
+2. In the URL bar, type:
+   ```
+   https://github.com/UScatter/1flex-firetv/releases/download/v1.0.0/1flex-tv-firestick.apk
+   ```
+3. Click **Go**, wait for the download to finish, and click **Install**.
 
 ---
 
@@ -9,56 +35,19 @@ A dedicated Amazon Fire TV / Android TV hybrid application for [1flex.org](https
 - **Ad-Shield Engine**: Blocks popups, `window.open` traps, and drops requests to ad networks (`layla.wtf`, `adsterra`, `popads`, etc.) at both the native socket layer and DOM layer.
 - **Click-Jack Disarmer**: Automatically purges transparent click-hijacking overlays placed over third-party video embeds.
 - **Fire TV Remote Virtual Cursor**: Smooth pointer physics, acceleration, edge scrolling, and hover feedback controlled with the standard Fire TV remote D-Pad.
-- **TV Quick Bar HUD**: Press the **Menu** button (`☰`) on the remote to access navigation shortcuts (Home, Back, Reload, Fullscreen, Speed Adjuster).
 - **Native Video Fullscreen**: Scales HTML5 embeds to 4K/1080p full screen with remote play/pause and fast-forward controls.
 - **Stay-Awake Lock**: Prevents Fire OS from dimming or activating the screensaver during playback.
 - **Leanback Launcher Ready**: Includes native 320x180 and 640x360 Fire TV banner assets and manifest declarations.
 
 ---
 
-## 📂 Project Structure
+## 🎮 Fire TV Remote Controls
 
-```
-1flex-firetv/
-├── android/                   # Native Fire OS / Android TV project (Capacitor + Gradle)
-│   ├── app/src/main/
-│   │   ├── AndroidManifest.xml # Fire TV Leanback & permission configurations
-│   │   ├── java/org/oneflex/firetv/MainActivity.java # Native Ad-filtering, Fullscreen & Remote bridge
-│   │   └── res/drawable/banner.png # Fire TV Home Screen banner
-├── www/                       # PWA Web Shell
-│   ├── css/tv-styles.css      # Dark TV Leanback design & cursor styling
-│   ├── js/ad-shield.js        # DOM Ad & overlay neutralizer
-│   ├── js/virtual-cursor.js   # Fire TV remote cursor & scroll physics engine
-│   ├── js/tv-app.js           # TV HUD, navigation, and wake lock controller
-│   ├── manifest.webmanifest   # PWA manifest
-│   └── index.html             # Shell container
-├── .github/workflows/         # Cloud CI/CD workflow to compile APK on GitHub
-├── build-local-apk.ps1        # Local Windows build script
-└── INSTALL_FIRE_STICK.md      # Step-by-step sideloading instructions
-```
-
----
-
-## 🚀 How to Build the APK
-
-### Option 1: GitHub Actions (No local Android SDK required)
-1. Push this folder to a GitHub repository.
-2. Go to the **Actions** tab in your GitHub repository.
-3. Select **Build Fire TV APK** and click **Run workflow**.
-4. Download the generated `1Flex-TV-FireStick-Debug-APK` artifact.
-
-### Option 2: Local Windows Build
-1. Install OpenJDK 17:
-   ```powershell
-   winget install Microsoft.OpenJDK.17
-   ```
-2. Install Android Studio (or Android SDK command-line tools):
-   ```powershell
-   winget install Google.AndroidStudio
-   ```
-3. Run the build script:
-   ```powershell
-   .\build-local-apk.ps1
-   ```
-
-For installation on your Fire Stick, refer to [`INSTALL_FIRE_STICK.md`](INSTALL_FIRE_STICK.md).
+| Button | Action |
+|---|---|
+| **D-Pad Arrows (Up/Down/Left/Right)** | Move the on-screen mouse pointer with acceleration physics |
+| **Edge Navigation** | Move pointer near screen top/bottom to auto-scroll |
+| **Center / Select Button** | Clicks element under cursor (dispatches hardware touch events across frames) |
+| **Back Button (◀)** | Go back in page history / exit fullscreen |
+| **Play / Pause (⏯)** | Toggle stream play/pause directly |
+| **Fast Forward (⏩) / Rewind (⏪)** | Seek +/- 10 seconds |
